@@ -7,7 +7,7 @@ if(platform == "Linux") {
   cppFlags += "-std=gnu++0x"
 }
 
-buildDir = "Build/$(configuration)/$(target)"
+buildDir = "Build/$(configuration)/.$(target)"
 outputDir = "Build/$(configuration)"
 
 targets = {

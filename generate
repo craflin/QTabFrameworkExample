@@ -1,0 +1,6 @@
+#!/bin/sh
+
+[ ! -f "Build/Debug/.mare/mare" ] && Ext/mare/compile --buildDir=Build/Debug/.mare --outputDir=Build/Debug/.mare --sourceDir=Ext/mare/src
+Build/Debug/.mare/mare $@
+
+
