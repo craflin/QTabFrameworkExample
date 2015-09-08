@@ -1,7 +1,9 @@
 
 # QTabFrameworkExample
 
-This is an example of the QTabFramework.
+This is an example application for the QTabFramework.
+
+![QTabFrameworkExample](/QTabFramework.png)
 
 ## Dependencies
 
