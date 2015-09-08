@@ -1,0 +1,67 @@
+
+if(tool == "vcxproj") {
+  cppFlags += { -"/MDd", "/MD" }
+  cFlags += { -"/MDd", "/MD" }
+}
+if(platform == "Linux") {
+  cppFlags += "-std=gnu++0x"
+}
+
+buildDir = "Build/$(configuration)/$(target)"
+outputDir = "Build/$(configuration)"
+
+targets = {
+
+  Example = cppApplication + {
+    dependencies = { "QTabFramework" }
+    defines += { "QT_SHARED", "QT_GUI_LIB", "QT_CORE_LIB", "QT_NO_DEBUG" }
+    if(configuration == "Debug") {
+        defines -= "QT_NO_DEBUG"
+    }
+    files = {
+      "*.cpp" = cppSource,
+      "*.h"
+    }
+    includePaths = { "Ext/QTabFramework" }
+    libs = { "QTabFramework" }
+    libPaths = { "$(outputDir)" }
+
+    if(platform == "Linux") {
+      libs += { "rt", "pthread", "QtGui", "QtCore" }
+      includePaths += {
+        "/usr/include/qt4/QtCore",
+        "/usr/include/qt4/QtGui",
+        "/usr/include/qt4"
+      }
+    }
+    
+    if(tool == "vcxproj") {
+      dependencies += { "QtGui4", "QtCore4", "winmain" }
+      cppFlags += { "/Yu", "/Zc:wchar_t-" }
+      linkFlags += { "/SUBSYSTEM:WINDOWS \"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'\"" }
+      files += {
+        "stdafx.cpp" = cppSource + {
+          cppFlags += { "/Yc" }
+        }
+      }
+      includePaths += {
+        "Ext/libcppqt/include",
+        "Ext/libcppqt/include/QtCore",
+        "Ext/libcppqt/include/QtGUI",
+      }
+      libs += { "winmain", "QtGui4", "QtCore4", "ws2_32" }
+    }
+  }
+  
+  if(tool == "vcxproj") {
+    include "Ext/libcppqt/libcppqt.mare"
+    "bootstrap moc rcc uic winmain QtCore4 QtGui4" += {
+        folder = "Ext/qt"
+    }
+  }
+  
+  include "Ext/QTabFramework/QTabFramework.mare"
+  QTabFramework += {
+    folder = "Ext/QTabFramework"
+  }
+}

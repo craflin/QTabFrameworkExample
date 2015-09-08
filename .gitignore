@@ -1,0 +1,8 @@
+Build/
+ipch/
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.sdf
+*.suo
+*.opensdf
