@@ -25,4 +25,4 @@ This is an example application for the QTabFramework.
 
 * Create a working copy of the QTabFrameworkExample repository.
 * Initialize submodules.
-* Call `generate.bat`.
+* Call `generate`.
