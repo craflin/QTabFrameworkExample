@@ -1,7 +1,7 @@
 
 # QTabFrameworkExample
 
-This is an example application for the QTabFramework.
+This is an example application for the QTabFramework. The QTabFramework is a Qt powered framework for applications with various tabbed widgets. QTabFramework is an extension of the QMainWindow class, which allows tabs to be arbitrary placed within main window or within floating child windows.
 
 ![QTabFrameworkExample](/QTabFramework.png)
 
@@ -19,7 +19,7 @@ This is an example application for the QTabFramework.
 * Create a working copy of the QTabFrameworkExample repository.
 * Initialize submodules.
 * Call `generate.bat`. This will compile *mare* and generate solutions files for Visual Studio 2013. You can use `generate.bat --vcxproj=20XX` to generate solution files for another version.
-* Open the solution file and compile and work with HelloQt within Visual Studio.
+* Open the solution file and compile and work with QTabFrameworkExample within Visual Studio.
 
 ### Linux
 
