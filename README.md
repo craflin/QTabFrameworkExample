@@ -1,7 +1,7 @@
 
 # QTabFrameworkExample
 
-This is an example application for the QTabFramework. The QTabFramework is a Qt powered framework for applications with various tabbed widgets. QTabFramework is an extension of the QMainWindow class, which allows tabs to be arbitrary placed within main window or within floating child windows.
+This is an example application for the [QTabFramework](https://github.com/craflin/QTabFramework). The QTabFramework is a Qt powered framework for applications with various tabbed widgets. QTabFramework is an extension of the QMainWindow class, which allows tabs to be arbitrary placed within main window or within floating child windows.
 
 ![QTabFrameworkExample](/QTabFramework.png)
 
