@@ -6,3 +6,5 @@ ipch/
 *.sdf
 *.suo
 *.opensdf
+CMakeLists.txt
+.*
